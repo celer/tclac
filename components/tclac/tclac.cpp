@@ -574,7 +574,7 @@ void tclacClimate::sendData(byte * message, byte size) {
 
 // Convert byte to readable format
 String tclacClimate::getHex(byte *message, byte size) {
-	String raw;
+	String raw="[\n";
 	for (int i = 0; i < size; i++) {
 		char hexbuf[3];
 		// Format hex value with two uppercase digits
@@ -584,6 +584,7 @@ String tclacClimate::getHex(byte *message, byte size) {
 		if (i < size - 1)
 			raw += "\n";
 	}
+	raw+="]\n";
 	return raw;
 }
 
