@@ -580,7 +580,7 @@ String tclacClimate::getHex(byte *message, byte size) {
 		// Format hex value with two uppercase digits
 		snprintf(hexbuf, sizeof(hexbuf), "%02X", message[i]);
 		// Append "[pos] 0xHH (DDD)"
-		raw += "[" + String(i) + "] 0x" + String(hexbuf) + " (" + String((int)message[i]) + ")";
+		raw += "[" + String(i) + "] 0x" + String(hexbuf) + " " + String((int)message[i]);
 		if (i < size - 1)
 			raw += "\n";
 	}
