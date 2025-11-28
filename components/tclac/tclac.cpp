@@ -77,7 +77,7 @@ void tclacClimate::loop()  {
 
 		byte check = getChecksum(dataRX, sizeof(dataRX));
 
-		raw = getHex(dataRX, sizeof(dataRX));
+		auto raw = getHex(dataRX, sizeof(dataRX));
 		
 		ESP_LOGD("TCL", "RX full : %s ", raw.c_str());
 
