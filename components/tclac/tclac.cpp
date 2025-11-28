@@ -50,6 +50,7 @@ void tclacClimate::setup() {
 void tclacClimate::loop()  {
 	// If there is something in the UART buffer, read it
 	if (esphome::uart::UARTDevice::available() > 0) {
+		ESP_LOGD("Data is available");
 		dataShow(0, true);
 		dataRX[0] = esphome::uart::UARTDevice::read();
 		// If the received byte is not the header (0xBB), just leave the loop
